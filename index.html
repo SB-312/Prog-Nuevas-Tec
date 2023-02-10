@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="utf-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<title>Pagina JS</title>
+</head>
+<body> 
+	<h1>Botones con Alertas y Confirmaciones</h1>
+	<br>
+	<button>Boton que no hace nada</button>
+	<br><br>
+	<button onclick="accion_1()"id="Bt1">Boton #1</button>
+	<br><br>
+	<button onclick="accion_2()"id="Bt2">Boton #2</button>
+	<br><br>
+	<button onclick="accion_3()"id="Bt3">Boton #3</button>
+	<br><br><br>
+	<h2>Despliegue de Datos</h2>
+	<br><br>
+	<p>Hola, a Continuacion solicitaremos algunos datos personales, esperamosque puedas colaborar con tu informacion ¡GRACIAS!</p>
+	<br>
+	Primer Nombre: <input type="text" name="Recibir texto 1" id="Tx_1"> 
+	Segundo Nombre: <input type="text" name="Recibir texto 2" id="Tx_2"> <br><br>
+	Primer Apellido: <input type="text" name="Recibir texto 3" id="Tx_3"> 
+	Segundo Apellido: <input type="text" name="Recibir texto 4" id="Tx_4"><br><br>
+	<button onclick="accion_4()"id="Bt4">Concatenar Nombre</button> <br><br>
+
+	Nombres:&nbsp;<output id="Out1"></output> y Apellidos:&nbsp;<output id="Out2"></output> 
+
+	<style type="text/css">		
+		/* Comentario CSS */
+		body{
+			background-image: url(Fondo.JPG);
+			background-repeat: round;
+			color: rgba(134, 212, 168, 1.0);
+		}
+		h1{color: rgba(202, 133, 222, 1.0);}
+		h2{color: rgba(133, 222, 161, 1.0);}
+		#Out_1{color: rgba(96,215,202, 1.0);}
+		#Out_2{color: rgba(96,215,202, 1.0);}
+	</style>
+	<script type="text/javascript">
+		// comentario JavaScrpit
+		function accion_1() {
+			alert("Presionaste el Boton #1 :D")
+		}
+		function accion_2() {
+			confirm(" Confirmacion de Boton #2 ")
+		}
+		function accion_3() {
+			alert("Presionaste el Boton #3 :)")
+			confirm(" Confirmacion de Boton #3 ")
+		}
+		function accion_4(){
+			var NombreCompleto = document.getElementById("Tx_1").value+" "+
+								 document.getElementById("Tx_2").value;
+			var ApellidoCompleto= document.getElementById("Tx_3").value+" "+	
+								  document.getElementById("Tx_4").value;	
+			var Nombre= 	document.getElementById("Tx_1").value+" "+
+							document.getElementById("Tx_2").value+" "+
+							document.getElementById("Tx_3").value+" "+	
+							document.getElementById("Tx_4").value;
+
+
+			alert("Tu nombre completo es: "+Nombre);		
+			document.getElementById("Out1").innerHTML=NombreCompleto;
+			document.getElementById("Out2").innerHTML=ApellidoCompleto;
+		}
+
+	</script>
+
+
+</body>
+</html>
